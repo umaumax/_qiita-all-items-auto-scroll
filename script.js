@@ -10,6 +10,10 @@ $(window).bind("scroll", function() {
 	$('.p-home_main').css('width', '80%');
 	// remove color inherit (to detect visited link color)
 	$('a').css('color', '-webkit-link');
+	// extend content
+	$('.p-items_container').css('max-width', 'initial');
+	$('.p-items_container').css('grid-template-columns', '80px calc(100% - 200px - 80px) 200px');
+	$('.p-items_toc').css('width', '100%');
 	if ( (scrollHeight - scrollPosition) / windowHeight <= 0.10) {
 		if (!scrollFlag) {
 			scrollFlag=true;
