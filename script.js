@@ -1,5 +1,7 @@
 // NOTE: to avoid multi click
 var scrollFlag = false;
+// NOTE: to avoid multi click
+var selectAllItemFlag = false;
 
 // for https://qiita.com/*/items/*
 $(function(){
@@ -25,8 +27,10 @@ $(function(){
 		var style = '<style type="text/css">'+
 			'.ra-TagList { display: none; }'+
 			'.p-home_main { width:80%; }'+
-			'a.tf-ItemContent_title { color:#337ab7 !important; }'+
-			'a:visited.tf-ItemContent_title { color:#685987 !important; }'+
+			'a.tf-ItemContent_title { color:#337ab7 !important; }'+// following items
+			'a:visited.tf-ItemContent_title { color:#685987 !important; }'+// following items
+			'a.af-Item_title { color:#337ab7 !important; }'+ // all items
+			'a:visited.af-Item_title { color:#685987 !important; }'+ // all items
 			'</style>';
 		$(style).appendTo('head');
 });
@@ -41,10 +45,18 @@ $(window).bind("scroll", function() {
 			scrollFlag=true;
 			// スクロールの位置が下からn%
 			// auto scroll
-			let elem = $('.af-ItemList_moreButton');
+			//			console.log('auto scroll');
 			$('.af-ItemList_moreButton').click();
 		}
 	} else {
 		scrollFlag = false;
+	}
+
+	// select all items
+	//	console.log('select all items');
+	if(!selectAllItemFlag) {
+		//	$('.af-ItemList_dropdown').click();
+		$('.af-ItemList_dropdownItem').eq(1).click();
+		selectAllItemFlag=true;
 	}
 });
