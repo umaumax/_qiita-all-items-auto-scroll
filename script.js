@@ -6,7 +6,9 @@ var selectAllItemFlag = false;
 // for https://qiita.com/*/items/*
 $(function(){
 	// hide comment form
-	$('.p-items_container').eq(1).hide();
+	//	$('.p-items_container').eq(1).hide();
+	$('.it-AuthorInfo').hide();
+	$('.p-items_Footer').hide();
 	// hide footer
 	$('.footer').hide();
 	// extend content
@@ -24,6 +26,7 @@ $(function(){
 		// charnge main content width
 		// remove color inherit (to detect visited link color)
 		// NOTE: ':visited'はセキュリティの関係上jsからは操作できないとのこと
+		// 遅延読み込みor遅延生成要素に関してはこのcss指定での方が確実
 		var style = '<style type="text/css">'+
 			'.ra-TagList { display: none; }'+
 			'.p-home_main { width:80%; }'+
@@ -31,6 +34,8 @@ $(function(){
 			'a:visited.tf-ItemContent_title { color:#685987 !important; }'+// following items
 			'a.af-Item_title { color:#337ab7 !important; }'+ // all items
 			'a:visited.af-Item_title { color:#685987 !important; }'+ // all items
+			'.commentForm { display: none; }'+
+			'.tocTree_contents.nav a { color: #000; }'+
 			'</style>';
 		$(style).appendTo('head');
 });
