@@ -51,7 +51,7 @@ $(window).bind("scroll", function() {
 			// スクロールの位置が下からn%
 			// auto scroll
 			//			console.log('auto scroll');
-			$('.af-ItemList_moreButton').click();
+			$('.tf-ItemList_moreButton').click();
 		}
 	} else {
 		scrollFlag = false;

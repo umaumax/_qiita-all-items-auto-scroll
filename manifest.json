@@ -6,7 +6,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://qiita.com/items",
+        "https://qiita.com/tag-feed",
         "https://qiita.com/",
         "https://qiita.com/*/items/*"
       ],
